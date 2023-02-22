@@ -4,9 +4,18 @@ import styles from "./form4.module.scss";
 
 function Form4() {
   const [otherCheck, setOtherCheck] = useState(false);
+  const [skills, setSkills] = useState([]);
 
   const handleOther = () => {
     setOtherCheck(!otherCheck);
+  };
+
+  const handleAddSkills = () => {
+    setSkills(() => [...skills, <input type="text" className={styles.skillInput} />]);
+  };
+
+  const handleDelSkills = () => {
+    setSkills((skillInp) => skillInp.slice(0, -1));
   };
 
   return (
@@ -19,7 +28,16 @@ function Form4() {
 
         <span>
           <label>Technical Skills Available: </label>
-          <input type="text" />
+          <input type="text" className={styles.skillInput}/>
+          {skills}
+          <div className={styles.buttonSkillInput}>
+            <button type="button" onClick={handleAddSkills}>
+              Add new input field
+            </button>
+            <button type="button" onClick={handleDelSkills}>
+              Delete input field
+            </button>
+          </div>
         </span>
 
         <span>
