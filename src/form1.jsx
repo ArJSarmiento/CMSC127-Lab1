@@ -6,18 +6,20 @@ function Form1() {
 
     return (
         <div className={styles.form}>
-            <section className={styles.board-members-header}>
-                <div className={styles.header-info}>
+            <section className={styles.board_member_header}>
+                <div className={styles.header_info}>
                     <h1>The Board of Trustees</h1>
                     <div>Company A</div>
                     <div>Company A Complex</div>
                     <div>Company A Address</div>
                 </div>
+                
                 <input type='date' />
             </section>
 
             <section>
-                <h2>Gentlemen:</h2> <div>We would like to apply for membership at Company A Export Federation as a:</div>
+                <h2>Gentlemen:</h2> 
+                <div>We would like to apply for membership at Company A Export Federation as a:</div>
                 <input type="text" />
                 <span>Regular Member</span>
             </section>

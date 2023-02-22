@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './form2.scss'
+import { useNavigate } from 'react-router-dom'
+import styles from './form1.module.scss'
 
 function Form2() {
+    const navigate = useNavigate()
   return (
     <div className="form-2">
       <form>
@@ -36,7 +37,7 @@ function Form2() {
                 <input type="text" id="contact_Pos" placeholder="Position"/>
             </span>
 
-            <span>
+            <div>
                 <h2>Address: OFFICE FACTORY</h2>
                 <label htmlFor="BldgNo">No./Bldg.Name: </label>
                 <input type="text" id="BldgName" placeholder="No./Bldg.Name"/>
@@ -57,42 +58,47 @@ function Form2() {
                 <input type="email" id="Email" placeholder="juandelacruz@gmail.com"/>
                 <label htmlFor="Facsimile">Facsimile: </label>
                 <input type="text" id="Facsimile" placeholder="Facsimile"/>
-            </span>
+            </div>
 
             <div>
 
                 <h2>PRODUCTS ALREADY EXPORTED AS OF PREVIOUS YEAR: </h2>
                 <div class="BRAND_PRODUCT">
                     <div class="BrandName">
-                    <h2>Brand Name</h2>
+                    <h3>Brand Name</h3>
                     <input type="text" id="BrandName"/>
                     </div>
                     <div class="ProductCode">
-                    <h2>Product Code</h2>
+                    <h3>Product Code</h3>
                     <input type="text" id="BrandName" maxlength="7"/>
                     </div>
                 </div>
             </div>
-            
-            <div>
+
+        <div>
             <h2>PRODUCTS PRODUCED FOR DOMESTIC MARKET ONLY AS OF PREVIOUS YEAR: </h2>
             <div class="BRAND_PRODUCT">
                     <div class="BrandName">
-                    <h2>Brand Name</h2>
-                    <input type="text" id="BrandName"/>
+                        <h2>Brand Name</h2>
+                        <h2>How many products would you like to enter?</h2>
+                        <input type="number" id="NumOfProduct" placeholder="Number of Products"/>
                     </div>
                     <div class="ProductCode">
-                    <h2>Product Code</h2>
-                    <input type="text" id="BrandName" maxlength="7"/>
+                        <h2>Product Code</h2>
+                        <input type="text" id="BrandName" maxlength="7" placeholder='Product Code'/>
                     </div>
                 </div>
             </div>
+
             <span>
                 <label htmlFor="CtrlNo">Control No: </label>
                 <input type="text" id="CtrlNo" placeholder="Num"/>
             </span>
         </div>
       </form>
+        <button onClick={() => navigate("/")} className={styles.nextBtn}>
+            Next
+        </button>
     </div>
   )
 }
