@@ -1,9 +1,11 @@
 import { useState } from "react";
 import styles from "./form.module.scss";
 import Form3Products from "./form3Products";
+import { useNavigate } from "react-router-dom";
 
 export default function Form3() {
 
+    const navigate = useNavigate();
     const [components, setComponents] = useState([<Form3Products />]);
 
     const addComponent = () => {
@@ -57,12 +59,14 @@ export default function Form3() {
 
                 {components.map((component, index) => (
                     <div key={index}>
-                        <button onClick={(e) => {
+                        <button
+                        id={styles.delete}
+                        onClick={(e) => {
                             e.preventDefault();
                             removeComponent(index)
-                            }}>
-                                Delete Product
-                            </button>
+                        }}>
+                            Delete Product
+                        </button>
                         {component}
                     </div>
                 ))}
@@ -70,17 +74,27 @@ export default function Form3() {
 
 
             </form>
-                <span className={styles.btnContainer}>
+            <span className={styles.btnContainer}>
 
-                    <button
-                        id={styles.add}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            addComponent()
-                        }}>
-                        + Add Another Product
-                    </button>
-                </span>
+                <button
+                    id={styles.add}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        addComponent()
+                    }}>
+                    + Add Another Product
+                </button>
+            </span>
+
+            <footer>
+                <button onClick={() => navigate("/form-2")} >
+                    Prev
+                </button>
+
+                <button onClick={() => navigate("/form-4")} className={styles.nextBtn}>
+                    Next
+                </button>
+            </footer>
 
         </section>
     );

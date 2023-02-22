@@ -119,7 +119,9 @@ const Form3Products = () => {
 
       {components.map((component, index) => (
         <div key={index}>
-          <button onClick={(e) => {
+          <button
+          id={styles.delete} 
+          onClick={(e) => {
             e.preventDefault();
             removeComponent(index)
           }}>
