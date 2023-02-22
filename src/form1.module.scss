@@ -1,0 +1,30 @@
+.form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+
+    ol{
+        li{
+            text-align: start;
+        }
+    }
+
+    .board-members-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .header-info{
+        text-align: start;
+    }
+
+    .nextBtn
+    {
+        padding: 2rem;
+        width: 200px;
+        align-self: flex-end;
+    }
+}
