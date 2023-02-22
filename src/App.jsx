@@ -16,7 +16,7 @@ function App() {
         </header>
         <Routes>
           <Route path='/' element={<Form1 />}></Route>
-          <Route path='/form-1.5' element={<Form15 />}></Route>
+          <Route path='/form-1a' element={<Form15 />}></Route>
           <Route path='/form-2' element={<Form2 />}></Route>
           <Route path='/form-3' element={<Form3 />}></Route>
           <Route path='/form-4' element={<Form4 />}></Route>

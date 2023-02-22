@@ -18,28 +18,17 @@ export default function Form3() {
         setComponents(updatedComponents);
     };
 
-    // const Products = [];
+    const handleSubmit = (event) => {
+        console.log("okay")
+        event.preventDefault();
 
-    // for (let i = 0; i < numProducts; i++) {
-    //     Products.push(
-    //         <div key={i}>
-    //             {
-    //                 numProducts == 1 ?
-    //                     null
-    //                     :
-    //                     <button
-    //                         onClick={(e) => {
-    //                             e.preventDefault();
-    //                             setNumProducts(numProducts - 1);
-    //                         }}
-    //                     >
-    //                         <img src={trashCan} />
-    //                     </button>
-    //             }
-    //             <Form3Products />
-    //         </div>
-    //     );
-    // }
+    
+        if (!event.target.checkValidity()) {
+          alert('Please fill out all required fields.');
+          return;
+        }
+        navigate('/form-4');
+      };
 
     return (
         <section className={styles.form}>
@@ -48,11 +37,13 @@ export default function Form3() {
                 <h1>Product Sheet</h1>
             </header>
 
-            <form id={styles.form3}>
+            <form id={styles.form3}
+            onSubmit={handleSubmit}
+            >
 
                 <span>
                     <label htmlFor="comppany-name">Company Name: </label>
-                    <input type="text" id="comppany-name" placeholder="Company Name" />
+                    <input required type="text" id="comppany-name" placeholder="Company Name" />
                 </span>
 
                 <hr />
@@ -71,9 +62,6 @@ export default function Form3() {
                     </div>
                 ))}
 
-
-
-            </form>
             <span className={styles.btnContainer}>
 
                 <button
@@ -91,10 +79,11 @@ export default function Form3() {
                     Prev
                 </button>
 
-                <button onClick={() => navigate("/form-4")} className={styles.nextBtn}>
+                <button type="submit" className={styles.nextBtn}>
                     Next
                 </button>
             </footer>
+            </form>
 
         </section>
     );

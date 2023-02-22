@@ -33,12 +33,12 @@ const Form3Products = () => {
 
         <span>
           <label htmlFor="brand-name">Local Brand Name: </label>
-          <input type="text" id="brand-name" placeholder="Local Brand Name" />
+          <input required type="text" id="brand-name" placeholder="Local Brand Name" />
         </span>
 
         <span>
           <label htmlFor="export">Export Brand Name: </label>
-          <input type="text" id="export" placeholder="Export Brand Name" />
+          <input required type="text" id="export" placeholder="Export Brand Name" />
         </span>
 
         <span>
@@ -53,12 +53,12 @@ const Form3Products = () => {
 
         <span>
           <label htmlFor="color">Color: </label>
-          <input type="text" id="color" placeholder="Color" />
+          <input required type="text" id="color" placeholder="Color" />
         </span>
 
         <span>
           <label htmlFor="size">Sizes: </label>
-          <input type="text" id="size" placeholder="Size" />
+          <input required type="text" id="size" placeholder="Size" />
         </span>
       </div>
 
@@ -81,7 +81,7 @@ const Form3Products = () => {
           {
             // if other, show input
             showOtherUnit === "other" ?
-              <input type="text" id={styles.other_unit} placeholder="Other" />
+              <input required type="text" id={styles.other_unit} placeholder="Other" />
               :
               null
           }
@@ -89,27 +89,27 @@ const Form3Products = () => {
 
         <span>
           <label htmlFor="net-weight">Net weight per unit: </label>
-          <input type="text" id="net-weight" placeholder="Net weight per unit" />
+          <input required type="text" id="net-weight" placeholder="Net weight per unit" />
         </span>
 
         <span>
           <label htmlFor="units-per-pack">No. of units per pack: </label>
-          <input type="text" id="units-per-pack" placeholder="No. of units per pack" />
+          <input required type="text" id="units-per-pack" placeholder="No. of units per pack" />
         </span>
 
         <span>
           <label htmlFor="weight-per-pack">No. of weight per pack: </label>
-          <input type="text" id="weight-per-pack" placeholder="No. of weight per pack" />
+          <input required type="text" id="weight-per-pack" placeholder="No. of weight per pack" />
         </span>
 
         <span>
           <label htmlFor="units-per-20">No. of units per 20 FCL: </label>
-          <input type="text" id="units-per-20" placeholder="No. of units per 20 FCL" />
+          <input required type="text" id="units-per-20" placeholder="No. of units per 20 FCL" />
         </span>
 
         <span>
           <label htmlFor="units-per-40">No. of units per 40 FCL: </label>
-          <input type="text" id="units-per-40" placeholder="No. of units per 40 FCL" />
+          <input required type="text" id="units-per-40" placeholder="No. of units per 40 FCL" />
         </span>
 
       </div>

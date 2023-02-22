@@ -1,18 +1,15 @@
-import React from 'react'
-import styles from './form.module.scss'
-
 const Form3Materials = () => {
     return (
         <div>
 
             <span>
                 <label htmlFor="material-used">Material used: </label>
-                <input type="text" id="material-used" placeholder="Material used" />
+                <input required type="text" id="material-used" placeholder="Material used" />
             </span>
 
             <span>
                 <label htmlFor="quantity-used">Quantity used: </label>
-                <input type="text" id="quantity-used" placeholder="Quantity used" />
+                <input required type="text" id="quantity-used" placeholder="Quantity used" />
             </span>
 
             <span>
@@ -22,7 +19,7 @@ const Form3Materials = () => {
 
             <span>
                 <label htmlFor="">Material Source: </label>
-                <select>
+                <select required>
                     <option value="" hidden></option>
                     <option value="domestic">Domestic</option>
                     <option value="imported">Imported</option>

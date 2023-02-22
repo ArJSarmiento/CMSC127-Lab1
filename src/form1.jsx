@@ -5,8 +5,18 @@ import styles1 from './form1.module.scss'
 function Form1() {
     const navigate = useNavigate()
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        if (!event.target.checkValidity()) {
+          alert('Please fill out all required fields.');
+          return;
+        }
+        navigate("/form-1a");
+      };
+
     return (
-        <div className={`${styles.form} ${styles1.form}`}>
+        <form className={`${styles.form} ${styles1.form}`} onSubmit={handleSubmit}>
             <section className={styles.board_member_header}>
                 <div className={styles.header_info}>
                     <h1>The Board of Trustees</h1>
@@ -15,13 +25,13 @@ function Form1() {
                     <div>Company A Address</div>
                 </div>
 
-                <input type='date' />
+                <input required type='date' />
             </section>
 
             <section>
                 <h2>Gentlemen:</h2>
                 <div>We would like to apply for membership at Company A Export Federation as a:</div>
-                <input type="text" />
+                <input required type="text" />
                 <span>Regular Member</span>
             </section>
 
@@ -35,7 +45,7 @@ function Form1() {
                     <li>Sponsored by any member of the Board of Trustees</li>
                     <li>No serious derogatory information about them supplied by reliable sources.</li>
                 </ol>
-                <input type="text" />
+                <input required type="text" />
                 <span>Associate Member</span>
             </section>
 
@@ -55,7 +65,7 @@ function Form1() {
                             <li>Trucking/freight companies</li>
                             <li>
                                 Brokers/forwarders(please specify)
-                                <input type="text" />
+                                <input required type="text" />
                             </li>
                         </ol>
                     </li>
@@ -64,7 +74,7 @@ function Form1() {
                     <li>Sponsored by any member of the Board of Trustees</li>
                     <li>No serious derogatory information about them supplied by reliable sources.</li>
                 </ol>
-                <input type="text" />
+                <input required type="text" />
                 <span>Provisional Member</span>
             </section>
 
@@ -77,17 +87,17 @@ function Form1() {
                 <br />
                 Sponsored by: Very truly yours,
                 <br />
-                <input type="text" placeholder='Trustee' />
+                <input required type="text" placeholder='Trustee' />
                 <h3>Signature</h3>
-                <input type='file' />
+                <input required type='file' />
             </section>
             
             <footer>
-                <button onClick={() => navigate("/form-1.5")} className={styles.nextBtn}>
+                <button type="submit" className={styles.nextBtn}>
                     Next
                 </button>
             </footer>
-        </div>
+        </form>
     )
 }
 

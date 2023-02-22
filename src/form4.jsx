@@ -13,24 +13,34 @@ function Form4() {
   };
 
   const handleAddSkills = () => {
-    setSkills(() => [...skills, <input type="text" className={styles4.skillInput} />]);
+    submitsetSkills(() => [...skills, <input required type="text" className={styles4.skillInput} key={skills.length}/>]);
   };
 
   const handleDelSkills = () => {
-    setSkills((skillInp) => skillInp.slice(0, -1));
+    submitsetSkills((skillInp) => skillInp.slice(0, -1));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!event.target.checkValidity()) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+    navigate('/thank-you');
   };
 
   return (
     <div className={styles4.Form4}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <span>
           <label>Production Technology/Patents/PSA License: </label>
-          <input type="text" />
+          <input required type="text" />
         </span>
 
         <span>
           <label>Technical Skills Available: </label>
-          <input type="text" className={styles4.skillInput}/>
+          <input required type="text" className={styles4.skillInput}/>
           {skills}
           <div className={styles4.buttonSkillInput}>
             <button type="button" onClick={handleAddSkills}>
@@ -76,25 +86,25 @@ function Form4() {
           {otherCheck == true ? (
             <span>
               <label>Please Specify: </label>
-              <input id="hiddenInput" type="input" />
+              <input required id="hiddenInput" type="text" />
             </span>
           ) : null}
         </span>
 
         <span>
           <label>Control Number: </label>
-          <input type="text" />
+          <input required type="text" />
         </span>
+        <footer>
+          <button onClick={() => navigate("/form-3")} >
+              Prev
+          </button>
+          <button type="submit" className={styles.nextBtn}>
+              Submit
+          </button>
+        </footer>
       </form>
 
-      <footer>
-        <button onClick={() => navigate("/form-3")} >
-            Prev
-        </button>
-        <button onClick={() => navigate("/thank-you")} className={styles.nextBtn}>
-            Submit
-        </button>
-      </footer>
     </div>
   );
 }
