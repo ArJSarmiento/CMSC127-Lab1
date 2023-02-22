@@ -1,5 +1,4 @@
 import styles from './form.module.scss'
-import styles1 from './form1.module.scss';
 import { useNavigate } from 'react-router-dom'
 
 function Form1() {
@@ -81,9 +80,12 @@ function Form1() {
                 <h3>Signature</h3>
                 <input type='file' />
             </section>
-            <button onClick={() => navigate("/form-2")} className={styles.nextBtn}>
-                Next
-            </button>
+            
+            <footer>
+                <button onClick={() => navigate("/form-2")} className={styles.nextBtn}>
+                    Next
+                </button>
+            </footer>
         </div>
     )
 }

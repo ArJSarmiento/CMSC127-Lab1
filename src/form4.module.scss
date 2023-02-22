@@ -1,3 +1,9 @@
+// #root {
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+// }
+
 html {
   margin: 0;
   display: flex;
@@ -24,9 +30,18 @@ html {
       font-weight: bold;
       // text-decoration: underline;
     }
+    .skillInput {
+      margin-bottom: 5px;
+    }
+    .buttonSkillInput {
+      display: flex;
+      justify-content: space-around;
+    }
     .salesAids {
       display: grid;
       grid-template-columns: auto auto;
     }
   }
 }
+
+
