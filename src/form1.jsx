@@ -1,4 +1,5 @@
-import styles from './form1.module.scss'
+import styles from './form.module.scss'
+import styles1 from './form1.module.scss';
 import { useNavigate } from 'react-router-dom'
 
 function Form1() {
