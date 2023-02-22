@@ -8,6 +8,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <header>
+          <h1>Product Form</h1>
+        </header>
         <Routes>
           <Route path='/' element={<Form1 />}></Route>
           <Route path='/form-2' element={<Form2 />}></Route>

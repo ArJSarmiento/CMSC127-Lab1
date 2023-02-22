@@ -5,6 +5,22 @@
     align-items: center;
     gap: 10px;
 
+    ol {
+        li {
+            text-align: start;
+        }
+    }
+
+    .board_member_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .header_info {
+        text-align: start;
+    }
 
     header{
         text-align: center;
@@ -61,8 +77,18 @@
     }
 }
 
-.nextBtn {
-    padding: 2rem;
-    width: 200px;
-    align-self: flex-end;
-  }
+footer{
+    display: block;
+    width: 100%;
+    padding: 2rem 0px;
+
+    button{
+        padding: 1rem;
+        border-radius: 10px;
+        width: 200px;
+    }
+    
+    .nextBtn {
+        float: right;
+    }
+}

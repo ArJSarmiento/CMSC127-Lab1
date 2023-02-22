@@ -1,11 +1,11 @@
-import './form2.scss'
 import { useNavigate } from 'react-router-dom'
-import styles from './form1.module.scss'
+import styles from './form.module.scss'
+import styles2 from './form2.module.scss'
 
 function Form2() {
     const navigate = useNavigate()
     return (
-        <div className="form-2">
+        <div className={styles2.form_2}>
             <form>
                 <span>
                     <label htmlFor="CtrlNo">Control No: </label>
@@ -80,11 +80,11 @@ function Form2() {
                         <div class="BRAND_PRODUCT">
                             <div class="BrandName">
                                 <h2>Brand Name</h2>
-                                <h2>How many products would you like to enter?</h2>
+                                <h3>How many products would you like to enter?</h3>
                                 <input type="number" id="NumOfProduct" placeholder="Number of Products" />
                             </div>
                             <div class="ProductCode">
-                                <h2>Product Code</h2>
+                                <h3>Product Code</h3>
                                 <input type="text" id="BrandName" maxlength="7" placeholder='Product Code' />
                             </div>
                         </div>
@@ -96,9 +96,16 @@ function Form2() {
                     </span>
                 </div>
             </form>
-            <button onClick={() => navigate("/")} className={styles.nextBtn}>
-                Next
-            </button>
+
+            <footer>
+                <button onClick={() => navigate("/")} >
+                    Prev
+                </button>
+
+                <button onClick={() => navigate("/form-3")} className={styles.nextBtn}>
+                    Next
+                </button>
+            </footer>
         </div>
     )
 }
