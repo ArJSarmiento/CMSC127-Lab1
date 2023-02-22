@@ -1,25 +1,44 @@
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import styles from './form.module.scss'
 import styles2 from './form2.module.scss'
 
+const ProductFormComponent = () => {
+    return (
+        <div class="BRAND_PRODUCT">
+            <div class="BrandName">
+                <label htmlFor="BrandName">Brand Name</label>
+                <input required type="text" id="BrandName" placeholder='Brand Name' />
+            </div>
+            <div class="ProductCode">
+                <label htmlFor="ProductCode">Product Code</label>
+                <input required type="text" id="ProductCode" placeholder='Product Code' />
+            </div>
+        </div>
+    )
+}
+
 function Form2() {
     const navigate = useNavigate()
+    const [productsExportedComponents, setProductsExportedComponents] = useState([<ProductFormComponent />])
+    const [productsProducedComponents, setProductsProducedComponents] = useState([<ProductFormComponent />])
+
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+
         if (!event.target.checkValidity()) {
-          alert('Please fill out all required fields.');
-          return;
+            alert('Please fill out all required fields.');
+            return;
         }
         navigate('/form-3');
-      };
+    };
 
     return (
         <div className={styles2.form_2}>
             <form onSubmit={handleSubmit}>
                 <span>
-                    <label htmlFor="CtrlNo">Control No: </label>
-                    <input required type="text" id="CtrlNo" placeholder="Num" />
+                    <label htmlFor="CtrlNo">Control Number: </label>
+                    <input type="text" id="CtrlNo" placeholder="Control Number" />
                 </span>
 
                 <h1>Company Profile</h1>
@@ -59,6 +78,7 @@ function Form2() {
                         <input required type="text" id="Province" placeholder="Province" />
                         <label htmlFor="Region">Region: </label>
                         <input required type="text" id="Region" placeholder="Region" />
+                        <br />
                         <label htmlFor="telCode">Tel. No.: </label>
                         <input required type="text" id="telCode" placeholder="Country Code" />
                         <input required type="text" id="telNum" placeholder="Number" />
@@ -71,34 +91,50 @@ function Form2() {
                     </div>
 
                     <div>
-
                         <h2>PRODUCTS ALREADY EXPORTED AS OF PREVIOUS YEAR: </h2>
-                        <div class="BRAND_PRODUCT">
-                            <div class="BrandName">
-                                <h3>Brand Name</h3>
-                                <input required type="text" id="BrandName" />
-                            </div>
-                            <div class="ProductCode">
-                                <h3>Product Code</h3>
-                                <input required type="text" id="BrandName" maxlength="7" />
-                            </div>
-                        </div>
+                        <button
+                            id={styles.add}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setProductsExportedComponents([...productsExportedComponents, <ProductFormComponent />])
+                            }}>
+                            + Add Exported Product
+                        </button>
+
+                        {productsExportedComponents.map((component, index) => {
+                            return (
+                                <div key={index}>
+                                    <br />
+                                    {component}
+                                </div>
+                            )
+                        }
+                        )}
                     </div>
 
                     <div>
                         <h2>PRODUCTS PRODUCED FOR DOMESTIC MARKET ONLY AS OF PREVIOUS YEAR: </h2>
-                        <div class="BRAND_PRODUCT">
-                            <div class="BrandName">
-                                <h2>Brand Name</h2>
-                            </div>
-                            <div class="ProductCode">
-                                <h3>Product Code</h3>
-                                <input required type="text" id="BrandName" maxlength="7" placeholder='Product Code' />
-                            </div>
-                        </div>
                     </div>
 
                     <span>
+                        <button id={styles.add} onClick={(e) => {
+                            e.preventDefault();
+                            setProductsProducedComponents([...productsProducedComponents, <ProductFormComponent />])
+                        }}>
+                            + Add Produced Product
+                        </button>
+                        {
+                            productsProducedComponents.map((component, index) => {
+                                return (
+                                    <div key={index}>
+                                        <br />
+                                        {component}
+                                    </div>
+                                )
+                            }
+                            )
+                        }
+                        <br />
                         <label htmlFor="CtrlNo">Control No: </label>
                         <input required type="text" id="CtrlNo" placeholder="Num" />
                     </span>

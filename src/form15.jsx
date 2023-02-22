@@ -16,18 +16,18 @@ function Form15() {
   };
 
   return (
-    <form className={styles15.Form15} 
-    onSubmit={handleSubmit}
+    <form className={styles15.Form15}
+      onSubmit={handleSubmit}
     >
       <div>
         <span>
           <label>Name of Company </label>
-          <input required type="text" placeholder="Juan D. Cruz" />
+          <input type="text" placeholder="ABC Inc." />
         </span>
 
         <span>
           <label>Printed name of authorized representative**</label>
-          <input required type="text" />
+          <input type="text" placeholder="Juan D. Cruz" />
         </span>
 
         <span>
@@ -144,18 +144,18 @@ function Form15() {
         </div>
 
         <footer>
-            <button onClick={() => navigate("/")} >
-                Prev
-            </button>
+          <button onClick={() => navigate("/")} >
+            Prev
+          </button>
 
-            <button
+          <button
             type="submit"
             // onClick={()=>{
             //   navigate('/form-2')
             // }}
-             className={styles.nextBtn}>
-                Next
-            </button>
+            className={styles.nextBtn}>
+            Next
+          </button>
         </footer>
       </div>
 

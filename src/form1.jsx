@@ -7,13 +7,13 @@ function Form1() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+
         if (!event.target.checkValidity()) {
-          alert('Please fill out all required fields.');
-          return;
+            alert('Please fill out all required fields.');
+            return;
         }
         navigate("/form-1a");
-      };
+    };
 
     return (
         <form className={`${styles.form} ${styles1.form}`} onSubmit={handleSubmit}>
@@ -91,7 +91,7 @@ function Form1() {
                 <h3>Signature</h3>
                 <input required type='file' />
             </section>
-            
+
             <footer>
                 <button type="submit" className={styles.nextBtn}>
                     Next

@@ -22,13 +22,13 @@ export default function Form3() {
         console.log("okay")
         event.preventDefault();
 
-    
+
         if (!event.target.checkValidity()) {
-          alert('Please fill out all required fields.');
-          return;
+            alert('Please fill out all required fields.');
+            return;
         }
         navigate('/form-4');
-      };
+    };
 
     return (
         <section className={styles.form}>
@@ -38,7 +38,7 @@ export default function Form3() {
             </header>
 
             <form id={styles.form3}
-            onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
 
                 <span>
@@ -51,38 +51,38 @@ export default function Form3() {
                 {components.map((component, index) => (
                     <div key={index}>
                         <button
-                        id={styles.delete}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            removeComponent(index)
-                        }}>
+                            id={styles.delete}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                removeComponent(index)
+                            }}>
                             Delete Product
                         </button>
                         {component}
                     </div>
                 ))}
 
-            <span className={styles.btnContainer}>
+                <span className={styles.btnContainer}>
 
-                <button
-                    id={styles.add}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        addComponent()
-                    }}>
-                    + Add Another Product
-                </button>
-            </span>
+                    <button
+                        id={styles.add}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            addComponent()
+                        }}>
+                        + Add Another Product
+                    </button>
+                </span>
 
-            <footer>
-                <button onClick={() => navigate("/form-2")} >
-                    Prev
-                </button>
+                <footer>
+                    <button onClick={() => navigate("/form-2")} >
+                        Prev
+                    </button>
 
-                <button type="submit" className={styles.nextBtn}>
-                    Next
-                </button>
-            </footer>
+                    <button type="submit" className={styles.nextBtn}>
+                        Next
+                    </button>
+                </footer>
             </form>
 
         </section>
