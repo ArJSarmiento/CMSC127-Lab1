@@ -2,7 +2,7 @@ import styles from './form.module.scss'
 import { useNavigate } from 'react-router-dom'
 function ThankYou() {
     const navigate = useNavigate()
-    return ( 
+    return (
         <div className={styles.thankyou}>
             <span>
                 Thank you for submitting your product information!
@@ -13,7 +13,7 @@ function ThankYou() {
                 </button>
             </footer>
         </div>
-     );
+    );
 }
 
 export default ThankYou;

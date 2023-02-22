@@ -120,25 +120,25 @@ const Form3Products = () => {
       {components.map((component, index) => (
         <div key={index}>
           <button
-          id={styles.delete} 
-          onClick={(e) => {
-            e.preventDefault();
-            removeComponent(index)
-          }}>
+            id={styles.delete}
+            onClick={(e) => {
+              e.preventDefault();
+              removeComponent(index)
+            }}>
             Delete Raw Material
           </button>
 
           {component}
         </div>
       ))}
-          <button
-            id={styles.add}
-            onClick={(e) => {
-              e.preventDefault();
-              addComponent();
-            }}>
-            Add Another Raw Material
-          </button>
+      <button
+        id={styles.add}
+        onClick={(e) => {
+          e.preventDefault();
+          addComponent();
+        }}>
+        Add Another Raw Material
+      </button>
     </>
   )
 }

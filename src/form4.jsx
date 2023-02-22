@@ -13,7 +13,7 @@ function Form4() {
   };
 
   const handleAddSkills = () => {
-    submitsetSkills(() => [...skills, <input required type="text" className={styles4.skillInput} key={skills.length}/>]);
+    submitsetSkills(() => [...skills, <input required type="text" className={styles4.skillInput} key={skills.length} />]);
   };
 
   const handleDelSkills = () => {
@@ -40,7 +40,7 @@ function Form4() {
 
         <span>
           <label>Technical Skills Available: </label>
-          <input required type="text" className={styles4.skillInput}/>
+          <input required type="text" className={styles4.skillInput} />
           {skills}
           <div className={styles4.buttonSkillInput}>
             <button type="button" onClick={handleAddSkills}>
@@ -97,10 +97,10 @@ function Form4() {
         </span>
         <footer>
           <button onClick={() => navigate("/form-3")} >
-              Prev
+            Prev
           </button>
           <button type="submit" className={styles.nextBtn}>
-              Submit
+            Submit
           </button>
         </footer>
       </form>
