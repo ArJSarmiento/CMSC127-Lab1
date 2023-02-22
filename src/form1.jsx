@@ -13,12 +13,12 @@ function Form1() {
                     <div>Company A Complex</div>
                     <div>Company A Address</div>
                 </div>
-                
+
                 <input type='date' />
             </section>
 
             <section>
-                <h2>Gentlemen:</h2> 
+                <h2>Gentlemen:</h2>
                 <div>We would like to apply for membership at Company A Export Federation as a:</div>
                 <input type="text" />
                 <span>Regular Member</span>

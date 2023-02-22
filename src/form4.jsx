@@ -26,34 +26,34 @@ function Form4() {
           <label>Availability of Sales Aids (Please enclose available sales aids) </label>
           <div className={styles.salesAids}>
             <label>
-              <input type='checkbox' name='sales-aids1'/>
+              <input type='checkbox' name='sales-aids1' />
               Samples
             </label>
             <label>
-              <input type='checkbox' name='sales-aids2'/>
+              <input type='checkbox' name='sales-aids2' />
               Photos
             </label>
             <label>
-              <input type='checkbox' name='sales-aids3'/>
+              <input type='checkbox' name='sales-aids3' />
               Catalogues
             </label>
             <label>
-              <input type='checkbox' name='sales-aids4'/>
+              <input type='checkbox' name='sales-aids4' />
               Price List
             </label>
             <label>
-              <input type='checkbox' name='salesAids4' id='others' onChange={handleOther}/>
+              <input type='checkbox' name='salesAids4' id='others' onChange={handleOther} />
               Others
             </label>
           </div>
-            {
-                otherCheck == true ? 
-                <span>
-                  <label>Please Specify: </label>
-                  <input id='hiddenInput' type='input' />
-                </span>
-                : null
-            }
+          {
+            otherCheck == true ?
+              <span>
+                <label>Please Specify: </label>
+                <input id='hiddenInput' type='input' />
+              </span>
+              : null
+          }
         </span>
 
         <span>
@@ -63,7 +63,7 @@ function Form4() {
 
       </form>
     </div>
-    
+
   )
 }
 

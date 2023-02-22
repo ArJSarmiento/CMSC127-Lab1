@@ -4,25 +4,24 @@
     flex-direction: column;
     gap: 10px;
 
-    ol{
-        li{
+    ol {
+        li {
             text-align: start;
         }
     }
 
-    .board_member_header{
+    .board_member_header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 1rem;
     }
 
-    .header_info{
+    .header_info {
         text-align: start;
     }
 
-    .nextBtn
-    {
+    .nextBtn {
         padding: 2rem;
         width: 200px;
         align-self: flex-end;
