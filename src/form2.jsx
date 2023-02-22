@@ -98,7 +98,7 @@ function Form2() {
             </form>
 
             <footer>
-                <button onClick={() => navigate("/")} >
+                <button onClick={() => navigate("/form-1.5")} >
                     Prev
                 </button>
 

@@ -82,6 +82,26 @@
     }
 }
 
+.thankyou{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+
+    span{
+        font-size: 5rem;
+        font-weight:bolder;
+        text-align: center;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 footer{
     display: block;
     width: 100%;
