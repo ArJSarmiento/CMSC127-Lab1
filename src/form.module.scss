@@ -32,6 +32,30 @@
         text-underline-offset: 5px;
     }
 
+    button{
+        background: #f34949;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        border-radius: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 5px;
+        &:hover{
+            transform: scale(0.98);
+            filter: opacity(0.8);
+            transition: all 0.2s ease-in;
+        }
+    }
+
+    hr{
+        width: 100%;
+    }
+
     form{
         display: flex;
         flex-direction: column;
@@ -55,27 +79,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        span.btnContainer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-
-            button{
-                border: none;
-                outline: none;
-                background:none;
-                margin-left: 10px;
-                pointer-events: all;
-                cursor: pointer;
-                font-family: inherit;
-                font-size: 25px;
-                font-weight: 600;
-
-                color: inherit;
-            }
-        }
     }
 }
 
@@ -92,5 +95,64 @@ footer{
     
     .nextBtn {
         float: right;
+    }
+}
+
+span.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    button#add{
+        border: none;
+        outline: none;
+        background:none;
+        margin-left: 10px;
+        pointer-events: all;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 25px;
+        font-weight: 600;
+
+        box-shadow: 0 4px 4px #00000040;
+        border-radius: 15px;
+        padding: 10px;
+        color: inherit;
+
+        &:hover{
+            transform: scale(0.98);
+            filter: opacity(0.8);
+            transition: all 0.2s ease-in;
+        }
+    }
+}
+
+#form3{
+    border: 2px #5b5b5b solid;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+button#add{
+    border: none;
+    outline: none;
+    background:none;
+    margin-left: 10px;
+    pointer-events: all;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 4px #00000040;
+    border-radius: 15px;
+    padding: 10px;
+    color: inherit;
+
+    &:hover{
+        transform: scale(0.98);
+        filter: opacity(0.8);
+        transition: all 0.2s ease-in;
     }
 }

@@ -1,10 +1,24 @@
 import React from 'react'
 import { useState } from "react";
 import styles from "./form.module.scss";
+import Form3Materials from './form3Materials';
 
 
 const Form3Products = () => {
   const [showOtherUnit, setShowOtherUnit] = useState("");
+
+  const [components, setComponents] = useState([<Form3Materials />]);
+
+  const addComponent = () => {
+    setComponents([...components, <Form3Materials key={components.length} />]);
+  };
+
+  const removeComponent = (index) => {
+    const updatedComponents = [...components];
+    updatedComponents.splice(index, 1);
+    setComponents(updatedComponents);
+  };
+
   return (
     <>
       <div>
@@ -12,7 +26,7 @@ const Form3Products = () => {
 
         <span>
           <label htmlFor="product-name">Product: </label>
-          <input type="text" id="product-name" placeholder="Product Name" />
+          <input required type="text" id="product-name" placeholder="Product Name" />
         </span>
 
         <h3>Product Description and Specifications</h3>
@@ -103,35 +117,26 @@ const Form3Products = () => {
 
       <h3>Major Raw Materials/Components Used:</h3>
 
-      { // component
-        <div>
+      {components.map((component, index) => (
+        <div key={index}>
+          <button onClick={(e) => {
+            e.preventDefault();
+            removeComponent(index)
+          }}>
+            Delete Raw Material
+          </button>
 
-          <span>
-            <label htmlFor="material-used">Material used: </label>
-            <input type="text" id="material-used" placeholder="Material used" />
-          </span>
-
-          <span>
-            <label htmlFor="quantity-used">Quantity used: </label>
-            <input type="text" id="quantity-used" placeholder="Quantity used" />
-          </span>
-
-          <span>
-            <label htmlFor="is-required">Is the material a required raw material?</label>
-            <input type="checkbox" id="is-required" />
-          </span>
-
-          <span>
-            <label htmlFor="">Material Source: </label>
-            <select>
-              <option value="" hidden></option>
-              <option value="domestic">Domestic</option>
-              <option value="imported">Imported</option>
-            </select>
-          </span>
-
+          {component}
         </div>
-      }
+      ))}
+          <button
+            id={styles.add}
+            onClick={(e) => {
+              e.preventDefault();
+              addComponent();
+            }}>
+            Add Another Raw Material
+          </button>
     </>
   )
 }
