@@ -1,4 +1,4 @@
-.form {
+.form{
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -19,11 +19,5 @@
 
     .header_info {
         text-align: start;
-    }
-
-    .nextBtn {
-        padding: 2rem;
-        width: 200px;
-        align-self: flex-end;
     }
 }

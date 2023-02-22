@@ -1,0 +1,68 @@
+.form{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+
+    header{
+        text-align: center;
+    }
+
+    h3{
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+
+            #other_unit{
+                margin-left: 5px;
+            }
+
+            label{
+                margin-right: 5px;
+            }
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        span.btnContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+
+            button{
+                border: none;
+                outline: none;
+                background:none;
+                margin-left: 10px;
+                pointer-events: all;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.nextBtn {
+    padding: 2rem;
+    width: 200px;
+    align-self: flex-end;
+  }
