@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import styles from "./form4.module.scss";
+import { useState } from "react";
+import styles4 from "./form4.module.scss";
+import styles from "./form.module.scss";
+import { useNavigate } from "react-router-dom";
 
 function Form4() {
   const [otherCheck, setOtherCheck] = useState(false);
-  const [skills, setSkills] = useState([]);
+  const [skills, submitsetSkills] = useState([]);
+  const navigate = useNavigate()
 
   const handleOther = () => {
     setOtherCheck(!otherCheck);
   };
 
   const handleAddSkills = () => {
-    setSkills(() => [...skills, <input type="text" className={styles.skillInput} />]);
+    setSkills(() => [...skills, <input type="text" className={styles4.skillInput} />]);
   };
 
   const handleDelSkills = () => {
@@ -19,7 +21,7 @@ function Form4() {
   };
 
   return (
-    <div className={styles.Form4}>
+    <div className={styles4.Form4}>
       <form>
         <span>
           <label>Production Technology/Patents/PSA License: </label>
@@ -28,9 +30,9 @@ function Form4() {
 
         <span>
           <label>Technical Skills Available: </label>
-          <input type="text" className={styles.skillInput}/>
+          <input type="text" className={styles4.skillInput}/>
           {skills}
-          <div className={styles.buttonSkillInput}>
+          <div className={styles4.buttonSkillInput}>
             <button type="button" onClick={handleAddSkills}>
               Add new input field
             </button>
@@ -44,7 +46,7 @@ function Form4() {
           <label>
             Availability of Sales Aids (Please enclose available sales aids){" "}
           </label>
-          <div className={styles.salesAids}>
+          <div className={styles4.salesAids}>
             <label>
               <input type="checkbox" name="sales-aids1" />
               Samples
@@ -84,6 +86,15 @@ function Form4() {
           <input type="text" />
         </span>
       </form>
+
+      <footer>
+        <button onClick={() => navigate("/form-3")} >
+            Prev
+        </button>
+        <button onClick={() => navigate("/thank-you")} className={styles.nextBtn}>
+            Submit
+        </button>
+      </footer>
     </div>
   );
 }

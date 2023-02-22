@@ -1,11 +1,12 @@
 import styles from './form.module.scss'
 import { useNavigate } from 'react-router-dom'
+import styles1 from './form1.module.scss'
 
 function Form1() {
     const navigate = useNavigate()
 
     return (
-        <div className={styles.form}>
+        <div className={`${styles.form} ${styles1.form}`}>
             <section className={styles.board_member_header}>
                 <div className={styles.header_info}>
                     <h1>The Board of Trustees</h1>
@@ -82,7 +83,7 @@ function Form1() {
             </section>
             
             <footer>
-                <button onClick={() => navigate("/form-2")} className={styles.nextBtn}>
+                <button onClick={() => navigate("/form-1.5")} className={styles.nextBtn}>
                     Next
                 </button>
             </footer>

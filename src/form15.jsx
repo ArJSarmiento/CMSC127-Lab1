@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import styles from "./form15.module.scss";
+import { useNavigate } from 'react-router-dom'
+import styles15 from "./form15.module.scss";
+import styles from './form.module.scss'
 
 function Form15() {
+  const navigate = useNavigate();
   return (
-    <div className={styles.Form15}>
+    <div className={styles15.Form15}>
       <form>
         <span>
           <label>Name of Company </label>
@@ -36,7 +37,7 @@ function Form15() {
               to belong)
             </em>
           </label>
-          <div className={styles.industrySector}>
+          <div className={styles15.industrySector}>
             <label>
               <input type="radio" name="industry-sector1" />
               Automotive parts and accessories
@@ -108,9 +109,9 @@ function Form15() {
             </label>
           </div>
         </span>
-        <div className={styles.footnotes}>
+        <div className={styles15.footnotes}>
           <p>
-            <span className={styles.asterisk}>*</span> This name must be that of
+            <span className={styles15.asterisk}>*</span> This name must be that of
             the person designated as the contact person in the Company A company
             profile. This person will be expected to attend all special and
             general membership meetings. If unable to attend any meeting, this
@@ -118,17 +119,27 @@ function Form15() {
             Company A.
           </p>
           <p>
-            <span className={styles.asterisk}>**</span> If you have questions
+            <span className={styles15.asterisk}>**</span> If you have questions
             regarding the classification of your company, please contact
             MEMBERSHIP DIVISION.
           </p>
           <p>
-            <span className={styles.asterisk}>IMPORTANT</span> Please enclose
+            <span className={styles15.asterisk}>IMPORTANT</span> Please enclose
             picture/brochures (promotional materials) of your products/services
             you offered.
           </p>
         </div>
       </form>
+
+      <footer>
+          <button onClick={() => navigate("/")} >
+              Prev
+          </button>
+
+          <button onClick={() => navigate("/form-2")} className={styles.nextBtn}>
+              Next
+          </button>
+      </footer>
     </div>
   );
 }
